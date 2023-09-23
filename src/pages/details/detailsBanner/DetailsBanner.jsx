@@ -31,6 +31,24 @@ const DetailsBanner = ({ video, crew }) => {
           <div className="backdrop-img">
             <Img imgSrc={url.backdrop + data?.backdrop_path} />
           </div>
+
+          <div className="opacity-layer">
+            <ContentWrapper>
+              <div className="content">
+                <div className="left">
+                  {data?.poster_path ? (
+                    <Img
+                      imgSrc={url.backdrop + data?.backdrop_path}
+                      className={"posterImg"}
+                    />
+                  ) : (
+                    <Img imgSrc={PosterFallback} className={"posterImg"} />
+                  )}
+                </div>
+                <div className="right"></div>
+              </div>
+            </ContentWrapper>
+          </div>
         </div>
       ) : (
         <div className="detailsBannerSkeleton">
