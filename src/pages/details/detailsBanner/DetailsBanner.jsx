@@ -61,7 +61,7 @@ const DetailsBanner = ({ video, crew }) => {
                         <div className="title">{`${
                           data?.name || data?.title
                         } (${dayjs(data?.release_date)?.format("YYYY")})`}</div>
-                        <div className="subtitle">{data.tagline}</div>
+                        <div className="subtitle">{data?.tagline}</div>
                         <Genres data={_genres} />
                         <div className="row">
                           <CircleRating
