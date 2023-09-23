@@ -67,7 +67,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/:movieType/:id" element={<Details />} />
+          <Route path="/:mediaType/:id" element={<Details />} />
           <Route path="/search/:query" element={<SearchResults />} />
           <Route path="/explore/:mediaType" element={<Explore />} />
           <Route path="*" element={<PageNotFound />} />
