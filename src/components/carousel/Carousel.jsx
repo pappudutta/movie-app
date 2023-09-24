@@ -10,13 +10,14 @@ import dayjs from "dayjs";
 
 import ContentWrapper from "../contentWrapper/ContentWrapper";
 import Img from "../lazyloadImage/Img";
+
 import PosterFallback from "../../assets/no-poster.png";
 
 import CircleRating from "../circleRating/CircleRating";
 import Genres from "../genres/Genres";
 import "./style.scss";
 
-const Carousel = ({ data, loading }) => {
+const Carousel = ({ data, loading, endpoint, title }) => {
   const carouselContainer = useRef();
   const { url } = useSelector(state => state.home);
   const navigate = useNavigate();
@@ -52,6 +53,7 @@ const Carousel = ({ data, loading }) => {
   return (
     <div className="carousel">
       <ContentWrapper>
+        {title && <div className="carouselTitle">{title}</div>}
         <BsFillArrowLeftCircleFill
           onClick={() => navigation("left")}
           className={`carouselLeftNav arrow`}
@@ -72,7 +74,9 @@ const Carousel = ({ data, loading }) => {
                 <div
                   className="carouselItem"
                   key={item.id}
-                  onClick={() => navigate(`/${item.media_type}/${item.id}`)}
+                  onClick={() =>
+                    navigate(`/${item.media_type || endpoint}/${item.id}`)
+                  }
                 >
                   <div className="posterBlock">
                     <Img imgSrc={posterUrl} className="" />
