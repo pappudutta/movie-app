@@ -102,6 +102,11 @@ const Carousel = ({ data, loading, endpoint, title }) => {
             {skItem()}
             {skItem()}
             {skItem()}
+            {skItem()}
+            {skItem()}
+            {skItem()}
+            {skItem()}
+            {skItem()}
           </div>
         )}
       </ContentWrapper>
